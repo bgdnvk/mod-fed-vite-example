@@ -53,8 +53,12 @@
 //export default App;
 
 import Button from 'fragments/Button'
+import Header from 'fragments/Header'
 
 const App = () => {
-   return <> <Button/> </>
+   return <>
+    <Header/>
+    <Button/> 
+  </>
 }
 export default App

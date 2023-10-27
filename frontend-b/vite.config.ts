@@ -10,8 +10,9 @@ export default defineConfig({
         name: 'frontend-b',
         filename: 'remoteEntry.js',
         remotes: {
-          fragments: 'fragments@http://localhost:3002/remoteEntry.js',
+          fragments: 'http://localhost:3002/assets/remoteEntry.js',
         },
+        shared: ['react','react-dom'] 
       }),
   ],
 })

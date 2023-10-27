@@ -35,17 +35,36 @@
 //export default App
 
 // frontend-a/src/App.tsx
-import React from 'react';
+//import React from 'react';
+//
+//const App: React.FC = () => (
+//  <div>
+//    <React.Suspense fallback="Loading Button...">
+//      <button onClick={() => import('fragments/Button').then(module => module.default())}>Load Button</button>
+//    </React.Suspense>
+//    <React.Suspense fallback="Loading Header...">
+//      <button onClick={() => import('fragments/Header').then(module => module.default())}>Load Header</button>
+//    </React.Suspense>
+//  </div>
+//);
 
-const App: React.FC = () => (
-  <div>
-    <React.Suspense fallback="Loading Button...">
-      <button onClick={() => import('fragments/Button').then(module => module.default())}>Load Button</button>
-    </React.Suspense>
-    <React.Suspense fallback="Loading Header...">
-      <button onClick={() => import('fragments/Header').then(module => module.default())}>Load Header</button>
-    </React.Suspense>
-  </div>
-);
+//export default App;
 
-export default App;
+import { Suspense } from 'react'
+import Button from 'fragments/Button'
+import Header from 'fragments/Header'
+
+const App = () => {
+   return <>
+    <Suspense fallback={<Loading/>}>
+     <Header/>
+     <Button/> 
+    </Suspense>
+  </>
+}
+
+const Loading = () => {
+  return <h2> Loading... </h2>
+}
+
+export default App
